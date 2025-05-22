@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Letter to My Bestie</title>
-  <link rel="stylesheet" href="okayed.css/bro.css" />
+  <link rel="stylesheet" href="bro.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Georgia', serif;
       background: #fff0f5;
       color: #5a004f;
       padding: 40px;
       line-height: 1.7;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .p-box {
-      width: 1250px;
+      max-width: 900px;
       margin: auto;
       background: #ffffff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 105, 180, 0.2);
-      height: 2750px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.25);
     }
 
     .okay address {
@@ -36,27 +40,49 @@
     }
 
     .dear h1 {
-      font-family: 'Georgia', serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #d63384;
+      margin-bottom: 20px;
     }
 
-    .your {
-      margin-bottom: 40px;
+    .letter p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .your h3 {
+      font-weight: normal;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      background-color: #d63384;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 20px;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #b81e6d;
     }
 
     footer {
       text-align: center;
-      margin-top: 60px;
-      font-size: 2.5rem;
+      margin-top: 50px;
+      font-size: 1.2rem;
       color: #999;
     }
   </style>
 </head>
 
 <body>
+
   <audio autoplay loop>
-    <source src="letter.mp3" type="audio/mpeg">
+    <source src="letter.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
@@ -80,9 +106,9 @@
 
     <div class="letter">
       <p>
-        You might not realize it, but you are one of the most beautiful souls I’ve ever had the blessing to know. Even
-        though we’ve never met face to face, you've touched my heart in ways no one else ever has. Your words, your
-        spirit, your heart—they all shine so brightly, it’s impossible not to feel warmth just thinking about you.<br><br>
+        You might not realize it, but you are one of the most beautiful souls I’ve ever had the blessing to know.
+        Even though we’ve never met face to face, you've touched my heart in ways no one else ever has.
+        Your words, your spirit, your heart—they all shine so brightly, it’s impossible not to feel warmth just thinking about you.<br><br>
 
         You’re like sunshine after a storm. Sweet like honey, gentle like a lullaby, and strong like the stars that
         never stop shining—even when the world goes dark. You have this rare kind of magic that makes people feel safe,
@@ -99,7 +125,7 @@
         One day, I hope we finally meet, and I get to say all this in person—but until then, let this letter and this
         website be a soft hug from me to you.<br><br>
 
-        Forever grateful for you,<br>
+        Forever grateful for you,<br />
         With all the sweetness in the world,
       </p>
     </div>
@@ -109,16 +135,13 @@
         <cite>OKHIKHIHORLAH</cite>
       </h3>
     </div>
+
+    <div style="text-align: center;">
+      <button onclick="location.href='index.html'">Back to Homepage</button>
+    </div>
   </div>
 
-  <div style="text-align: center; margin-top: 30px;">
-    <button onclick="location.href='index.html'" style="padding: 10px 20px; border: none; background-color: #d63384; color: white; border-radius: 20px; cursor: pointer; font-size: 35px;">
-      Back to Homepage
-    </button>
-  </div>
-
-  <footer>Copyright &copy; 2025 Emmanuel</footer>
+  <footer>&copy; 2025 Emmanuel</footer>
 
 </body>
-
 </html>
