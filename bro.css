@@ -30,6 +30,11 @@ position: relative;
   font-style: bold;
   color: darkblue;
 }
+.p-box .address {
+  text-align: right;
+  padding-right: 15px;
+  font-size: 25px;
+}
 .p-box p{
   color: blue;
   font-size: 42px;
