@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Picture Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(to right, #ffe0ec, #ffeaf6);
+      font-family: 'Segoe UI', sans-serif;
+      color: #d63384;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      flex-direction: column;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 15px;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px;
+    }
+
+    .nav span {
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .back-btn {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #b81e6d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>A Gallery For You ✨</h1>
+
+  <div class="gallery">
+    <img src="her1.jpg" onclick="openLightbox(0)" alt="Pic 1" />
+    <img src="her2.jpg" onclick="openLightbox(1)" alt="Pic 2" />
+    <img src="her3.jpg" onclick="openLightbox(2)" alt="Pic 3" />
+    <img src="her4.jpg" onclick="openLightbox(3)" alt="Pic 4" />
+    <img src="her5.jpg" onclick="openLightbox(4)" alt="Pic 4" />
+    <img src="her6.jpg" onclick="openLightbox(5)" alt="Pic 4" />
+    <img src="her7.jpg" onclick="openLightbox(6)" alt="Pic 4" />
+    <img src="her8.jpg" onclick="openLightbox(7)" alt="Pic 4" />
+    <img src="her9.jpg" onclick="openLightbox(8)" alt="Pic 4" />
+    <img src="her10.jpg" onclick="openLightbox(9)" alt="Pic 4" />
+    <img src="me1.jpg" onclick="openLightbox(10)" alt="Pic 4" />
+    <img src="me2.jpg" onclick="openLightbox(11)" alt="Pic 4" />
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="Expanded" />
+    <div class="nav">
+      <span onclick="prevImage()">&#10094;</span>
+      <span onclick="nextImage()">&#10095;</span>
+    </div>
+  </div>
+
+  <br>
+  <a href="index.html" class="back-btn">← Back to Homepage</a>
+
+  <script>
+    const images = ["her1.jpg", "her2.jpg", "her3.jpg", "her4.jpg", "her5.jpg", "her6.jpg", "her7.jpg", "her8.jpg", "her9.jpg", "her10.jpg", "me1.jpg", "me2.jpg"];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+    }
+  </script>
+
+</body>
+</html>
